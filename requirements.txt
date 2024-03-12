@@ -1,0 +1,6 @@
+# cv2
+# keras
+# matplotlib.pyplot
+numpy
+python-dotenv
+# tensorflow
