@@ -14,6 +14,7 @@ export PATH=${PATH_VENV}/bin:$PATH
 
 export LOG_SEVERITY="TRACE"
 export LOG_FORMAT="<green>{time}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+export LOG_SINK="sys.stdout"
 
 # endregion
 # region: gum
