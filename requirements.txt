@@ -1,5 +1,6 @@
 # cv2
 # keras
+loguru
 # matplotlib.pyplot
 numpy
 python-dotenv

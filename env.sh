@@ -7,6 +7,14 @@ export PATH_BASE=/Volumes/TExClassifier
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
 
+export PATH=${PATH_VENV}/bin:$PATH
+
+# endregion
+# region: log
+
+export LOG_SEVERITY="TRACE"
+export LOG_FORMAT="<green>{time}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+
 # endregion
 # region: gum
 
