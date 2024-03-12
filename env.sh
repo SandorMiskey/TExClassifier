@@ -4,10 +4,13 @@
 # region: PATH
 
 export PATH_BASE=/Volumes/TExClassifier
+export PATH_TRAINING=${PATH_BASE}/data/training
+export PATH_TEST=${PATH_BASE}/data/test
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
+export PATH_MODEL=${PATH_WORKBENCH}/model.h5
 
-export PATH=${PATH_VENV}/bin:$PATH
+export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 
 # endregion
 # region: log

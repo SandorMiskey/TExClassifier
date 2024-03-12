@@ -1,7 +1,9 @@
 # cv2
 # keras
+keras.utils
 loguru
 # matplotlib.pyplot
 numpy
+pillow
 python-dotenv
-# tensorflow
+tensorflow

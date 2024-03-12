@@ -25,7 +25,9 @@ dep_external:
 dep_venv:
 	@echo "${GUM_PREFIX}checkig for python venv"
 	@${PATH_VENV}/bin/pip3 --version
-init: dep_external clean
+init: clean init_venv
+init_all: init
+init_venv: dep_external
 	@echo "${GUM_PREFIX}setting python3 venv"
 	@gum confirm "is PATH_VENV == ${PATH_VENV} correct?" || exit 1
 	@python3 -m venv ${PATH_VENV}
