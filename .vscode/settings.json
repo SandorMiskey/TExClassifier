@@ -1,4 +1,4 @@
 {
-  "cSpell.words": ["dotenv", "loguru"],
+  "cSpell.words": ["crossentropy", "dotenv", "loguru", "relu", "softmax"],
   "python.defaultInterpreterPath": "/Volumes/TExClassifier/workbench/venv/bin/python"
 }

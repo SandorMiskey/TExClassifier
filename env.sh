@@ -8,7 +8,7 @@ export PATH_TRAINING=${PATH_BASE}/data/training
 export PATH_TEST=${PATH_BASE}/data/test
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
-export PATH_MODEL=${PATH_WORKBENCH}/model.h5
+export PATH_MODEL=${PATH_WORKBENCH}/model.keras
 
 export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 
@@ -18,6 +18,13 @@ export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 export LOG_SEVERITY="TRACE"
 export LOG_FORMAT="<green>{time}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
 export LOG_SINK="sys.stdout"
+
+# endregion
+# region: ml
+
+export TRAIN_MODEL="model"
+export TRAIN_BATCHSIZE=32
+export TRAIN_EPOCHS=50
 
 # endregion
 # region: gum
