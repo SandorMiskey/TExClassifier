@@ -35,7 +35,7 @@ c.logger.info(f"model compiled")
 
 # endregion
 # region: load data
-			  
+
 c.logger.info("loading training data")
 train_gen = ImageDataGenerator(rescale = 1./255, shear_range=0.3, horizontal_flip=True, vertical_flip=True, zoom_range=0.3)
 train_flow = train_gen.flow_from_directory(c.env[PATH_TRAINING_KEY],

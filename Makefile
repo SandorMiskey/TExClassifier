@@ -30,6 +30,6 @@ init_all: init
 init_venv: dep_external
 	@echo "${GUM_PREFIX}setting python3 venv"
 	@gum confirm "is PATH_VENV == ${PATH_VENV} correct?" || exit 1
-	@python3 -m venv ${PATH_VENV}
+	@python3.8 -m venv ${PATH_VENV}
 	@. ${PATH_VENV}/bin/activate && ${PATH_VENV}/bin/pip3 install -U pip
 	@. ${PATH_VENV}/bin/activate && ${PATH_VENV}/bin/pip3 install -r requirements.txt
