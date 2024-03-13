@@ -1,6 +1,6 @@
 # region: packages
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from loguru import logger
 import os
 import sys
@@ -22,8 +22,8 @@ LOG_SINK_VALUE = "stderr"
 # region: fn
 
 def get_env(env_path=".env"):
-    if os.path.isfile(env_path):
-        load_dotenv(env_path)
+    # if os.path.isfile(env_path):
+    #     load_dotenv(env_path)
     return dict(os.environ)
 
 def get_logger():

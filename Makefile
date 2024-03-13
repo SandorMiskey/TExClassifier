@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build
-REQUIRED_VARIABLES := PATH_VENV PATH_WORKBENCH
+REQUIRED_VARIABLES := PATH_PYTHON PATH_VENV PATH_WORKBENCH
 
-all: init
+all: train
 clean: dep_external
 	@gum style 'THIS TARGET CAN BE DESTRUCTIVE' 'IT SHOULD BE RUN WITH SPECIAL CARE'
 	@gum confirm "do you want to proceed?" || exit 1
@@ -20,16 +20,22 @@ dep:
 	@echo "${GUM_PREFIX}all dependencies are inplace"
 dep_external:
 	@echo "${GUM_PREFIX}checkig for expternal dependencies"
+	@printf `which gum`": "
 	@gum --version
-	@python3 --version
+	@printf "${PATH_PYTHON}: "
+	@${PATH_PYTHON} --version 
 dep_venv:
 	@echo "${GUM_PREFIX}checkig for python venv"
 	@${PATH_VENV}/bin/pip3 --version
-init: clean init_venv
-init_all: init
-init_venv: dep_external
+init: dep_external
 	@echo "${GUM_PREFIX}setting python3 venv"
 	@gum confirm "is PATH_VENV == ${PATH_VENV} correct?" || exit 1
-	@python3.8 -m venv ${PATH_VENV}
+	@${PATH_PYTHON} -m venv ${PATH_VENV}
 	@. ${PATH_VENV}/bin/activate && ${PATH_VENV}/bin/pip3 install -U pip
 	@. ${PATH_VENV}/bin/activate && ${PATH_VENV}/bin/pip3 install -r requirements.txt
+categories: dep
+	@${PATH_VENV}/bin/python prepare.py
+predict: dep
+	@${PATH_VENV}/bin/python predict.py
+train: dep
+	@${PATH_VENV}/bin/python train.py

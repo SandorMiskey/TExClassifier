@@ -9,6 +9,8 @@ export PATH_TEST=${PATH_BASE}/data/test
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
 export PATH_MODEL=${PATH_WORKBENCH}/model.keras
+export PATH_CATEGORIES=${PATH_WORKBENCH}/categories.pkl
+export PATH_PYTHON=$(which python3.9)
 
 export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 
@@ -22,9 +24,10 @@ export LOG_SINK="sys.stdout"
 # endregion
 # region: ml
 
+export TRAIN_BATCHSIZE=64
+export TRAIN_EPOCHS=100
 export TRAIN_MODEL="model"
-export TRAIN_BATCHSIZE=32
-export TRAIN_EPOCHS=50
+export TRAIN_STOPPING=10
 
 # endregion
 # region: gum
