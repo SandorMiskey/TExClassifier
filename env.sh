@@ -13,7 +13,7 @@ export PATH_VALIDATION=${PATH_TEST}
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
 export PATH_MODEL=${PATH_WORKBENCH}/model.keras
-export PATH_CATEGORIES=${PATH_WORKBENCH}/categories
+export PATH_CLASSES=${PATH_WORKBENCH}/classes
 
 export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 

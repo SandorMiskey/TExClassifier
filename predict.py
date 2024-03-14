@@ -30,13 +30,13 @@ c.logger.debug(f"tensorflow version: {tensorflow.__version__}")
 c.logger.info(f"model has been loaded ({c.env[PATH_MODEL_KEY]})")
 
 # endregion
-# region: categories
+# region: classes
 
 with open(c.env[PATH_CATEGORIES_KEY], 'rb') as f:
-    categories = pickle.load(f)
-    categories.sort()
-c.logger.debug(categories)
-c.logger.info(f"dataset has been loaded with {len(categories)} items")
+    classes = pickle.load(f)
+    classes.sort()
+c.logger.debug(classes)
+c.logger.info(f"dataset has been loaded with {len(classes)} items")
 
 # endregion
 # region: load sample
@@ -69,7 +69,7 @@ c.logger.info(f"{img_path} has been prepared")
 
 result = model.predict(img_arr, verbose=c.verbose)
 answers = np.argmax(result, axis = 1)
-text = categories[answers[0]]
+text = classes[answers[0]]
 print(text)
 if c.verbose == 1:
     c.logger.debug("category: #" + str(answers[0]))

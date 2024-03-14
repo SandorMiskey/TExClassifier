@@ -15,13 +15,10 @@ PATH_CATEGORIES_KEY = "PATH_CATEGORIES"
 
 # endregion
 
-categories = [entry for entry in os.listdir(c.env[PATH_TEST_KEY]) if not entry.startswith('.')]
-categories.sort()
-c.logger.debug(categories)
+classes = [entry for entry in os.listdir(c.env[PATH_TEST_KEY]) if not entry.startswith('.')]
+classes.sort()
+c.logger.debug(classes)
 
 with open(c.env[PATH_CATEGORIES_KEY], 'wb') as f:
-	pickle.dump(categories, f)
-# with open(c.env[PATH_CATEGORIES_KEY], 'w') as f:
-# 	for category in categories:
-# 		f.write(category + '\n')
-c.logger.info(f"dataset saved with {len(categories)} items")
+	pickle.dump(classes, f)
+c.logger.info(f"dataset saved with {len(classes)} items")

@@ -9,6 +9,9 @@
     "relu",
     "softmax"
   ],
+  // "problems.exclude": {
+  //   "**/copilot/**": true
+  // },
   "python.defaultInterpreterPath": "/Volumes/TExClassifier/workbench/venv/bin/python",
   "python.analysis.typeCheckingMode": "off",
   "python.analysis.autoImportCompletions": true
