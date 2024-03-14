@@ -53,5 +53,7 @@ def get_logger():
 
 env = get_env()
 logger = get_logger()
+verbose = 0
+verbose = 1 if env[LOG_SEVERITY_KEY] in ("TRACE", "DEBUG") else None
 
 # endregion

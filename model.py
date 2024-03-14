@@ -14,13 +14,13 @@ def create():
 	model.add(MaxPooling2D())
 	model.add(Dropout(0.5))
 	model.add(Flatten())
-	# model.add(Dense(5000, activation="relu"))	# model might be too complex for the task, especially with the dense layers of 5000 and 1000 neurons. This can lead to
-	# model.add(Dense(1000, activation="relu"))	# overfitting, where the model learns the noise in the training data instead of the underlying pattern. Try 1024 & 512
-	model.add(Dense(1024, activation="relu"))
-	model.add(Dense(512, activation="relu"))
+	model.add(Dense(5000, activation="relu"))	# model might be too complex for the task, especially with the dense layers of 5000 and 1000 neurons. This can lead to
+	model.add(Dense(1000, activation="relu"))	# overfitting, where the model learns the noise in the training data instead of the underlying pattern. Try 1024 & 512
+	# model.add(Dense(1024, activation="relu"))
+	# model.add(Dense(512, activation="relu"))
 	model.add(Dense(131, activation="softmax"))
 
-	# model.compile(loss="categorical_crossentropy", optimizer="SGD", metrics=["accuracy"])
-	model.compile(loss="categorical_crossentropy", optimizer=Adam(learning_rate=0.001), metrics=["accuracy"])
+	model.compile(loss="categorical_crossentropy", optimizer="SGD", metrics=["accuracy"])
+	# model.compile(loss="categorical_crossentropy", optimizer=Adam(learning_rate=0.001), metrics=["accuracy"])
 
 	return model

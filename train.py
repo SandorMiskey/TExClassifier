@@ -35,8 +35,7 @@ c.logger.debug(f"{TRAIN_MODEL_KEY}: {c.env.get(TRAIN_MODEL_KEY)}")
 c.logger.info("compiling model")
 module = importlib.import_module(c.env.get(TRAIN_MODEL_KEY))
 model = module.create()
-if c.env[LOG_SEVERITY_KEY] in ("TRACE", "DEBUG"):
-	model.summary()
+model.summary() if c.verbose == 1 else None
 c.logger.info(f"model compiled")
 
 # endregion
