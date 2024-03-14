@@ -1,5 +1,6 @@
 loguru
 numpy
+opencv-python
 pillow
 python-dotenv
 scipy
