@@ -21,4 +21,7 @@ c.logger.debug(categories)
 
 with open(c.env[PATH_CATEGORIES_KEY], 'wb') as f:
 	pickle.dump(categories, f)
+# with open(c.env[PATH_CATEGORIES_KEY], 'w') as f:
+# 	for category in categories:
+# 		f.write(category + '\n')
 c.logger.info(f"dataset saved with {len(categories)} items")

@@ -3,8 +3,8 @@
 import common as c
 import importlib
 import numpy as np
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras.callbacks import EarlyStopping
+from keras.preprocessing.image import ImageDataGenerator
 
 # endregion
 # region: const

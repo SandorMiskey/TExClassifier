@@ -3,21 +3,31 @@
 #
 # region: PATH
 
+export PATH_PYTHON=$(which python3.9)
 export PATH_BASE=/Volumes/TExClassifier
+
 export PATH_TRAINING=${PATH_BASE}/data/training
 export PATH_TEST=${PATH_BASE}/data/test
+export PATH_VALIDATION=${PATH_TEST}
+
 export PATH_WORKBENCH=${PATH_BASE}/workbench
 export PATH_VENV=${PATH_WORKBENCH}/venv
 export PATH_MODEL=${PATH_WORKBENCH}/model.keras
-export PATH_CATEGORIES=${PATH_WORKBENCH}/categories.pkl
-export PATH_PYTHON=$(which python3.9)
+export PATH_CATEGORIES=${PATH_WORKBENCH}/categories
 
 export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 
 # endregion
 # region: log
 
-export LOG_SEVERITY="WARNING"
+# TRACE: Detailed information, typically of interest only when diagnosing problems.
+# DEBUG: Detailed information on the flow through the system.
+# INFO: Confirmation that things are working as expected.
+# SUCCESS: An operation has succeeded (this level is not included in standard Python logging).
+# WARNING: An indication that something unexpected happened, or there may be some problem in the near future (e.g. 'disk space low'). The software is still working as expected.
+# ERROR: Due to a more serious problem, the software has not been able to perform some function.
+# CRITICAL: A very serious error, indicating that the program itself may be unable to continue running.
+export LOG_SEVERITY="DEBUG"
 export LOG_FORMAT="<green>{time}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
 export LOG_SINK="sys.stdout"
 
