@@ -3,8 +3,8 @@
 import common as c
 import cv2
 from keras.utils import img_to_array , load_img
+from keras.models import load_model
 import numpy as np
-# import os
 import pickle
 import tensorflow
 
@@ -20,8 +20,10 @@ PATH_MODEL_KEY = "PATH_MODEL"
 # endregion
 # region: model
 
-model = tensorflow.keras.models.load_model(c.env[PATH_MODEL_KEY])
+# model = tensorflow.keras.models.load_model(c.env[PATH_MODEL_KEY])
+model = load_model(c.env[PATH_MODEL_KEY])
 model.summary() if c.verbose == 1 else None
+c.logger.debug(f"tensorflow version: {tensorflow.__version__}")
 c.logger.info(f"model has been loaded ({c.env[PATH_MODEL_KEY]})")
 
 # endregion
