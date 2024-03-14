@@ -35,7 +35,7 @@ c.logger.debug(categories)
 c.logger.info(f"dataset has been loaded with {len(categories)} items")
 
 # endregion
-# region: load file
+# region: load sample
 
 img_file = "data/eggplant.jpg"
 img_raw = load_img(img_file, target_size=(100,100))
@@ -51,12 +51,17 @@ c.logger.info(f"{img_file} has been prepared")
 
 result = model.predict(img_arr, verbose=c.verbose)
 answers = np.argmax(result, axis = 1)
-print(answers[0])
 text = categories[answers[0]]
-print("Predicted image : "+ text)
+print(text)
+if c.verbose == 1:
+    c.logger.debug("category: #"+str(answers[0]))
+    c.logger.debug("accuracy: " + str(result[0][answers[0]]))
 
-cv2.imshow(text, cv2.imread(img_file))
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+    img = cv2.imread(img_file)
+    cv2.namedWindow(text, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(text, 600, 600)
+    cv2.imshow(text, img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 # endregion

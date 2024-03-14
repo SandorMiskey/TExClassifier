@@ -17,9 +17,15 @@ export PATH=${PATH_VENV}/bin:/opt/homebrew/bin:$PATH
 # endregion
 # region: log
 
-export LOG_SEVERITY="TRACE"
+export LOG_SEVERITY="WARNING"
 export LOG_FORMAT="<green>{time}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
 export LOG_SINK="sys.stdout"
+
+# 0 = all messages are logged (default behavior)
+# 1 = INFO messages are not printed
+# 2 = INFO and WARNING messages are not printed
+# 3 = INFO, WARNING, and ERROR messages are not printed
+export TF_CPP_MIN_LOG_LEVEL=1
 
 # endregion
 # region: ml
